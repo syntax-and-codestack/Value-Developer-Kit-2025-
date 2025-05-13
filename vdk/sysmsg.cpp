@@ -18,7 +18,11 @@ void VDKGlobalMessageStream(static char msgBuff[1024]){
             }
 
             if( f->fSel == true ){
-                
+                Sysprintf("VDK: face %p is selected/n");
+            }
+
+            if( b->bSel == true ){
+                Sysprintf();
             }
 
           
