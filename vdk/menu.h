@@ -18,4 +18,6 @@ const char* FILE_FILTER = "&Filter";
 const char* FILE_PLUGIN = "&Plugin";
 const char& FILE_HELP = "&Help";
 
+void FillMenu( HMENU * menu, const char* file );
+
 #endif
