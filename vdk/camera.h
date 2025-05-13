@@ -29,4 +29,6 @@ public:
 
 };
 
+camera_t * cam();
+
 #endif
