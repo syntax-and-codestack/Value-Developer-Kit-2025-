@@ -5,3 +5,6 @@
 #include "cmdlib.h"
 #include "mathlib.h"
 
+#include <string>
+#include <Windows.h>
+#include <GL.h>
