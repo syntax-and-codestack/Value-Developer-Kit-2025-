@@ -10,23 +10,5 @@ void VDKGlobalMessageStream(static char msgBuff[1024]){
         face_t * f;
         brush_t * b;
         entity_t * e;
-  
-        while( main() = 0 ){
-          
-            if( p = new plane_t ){
-                  Sysprintf("VDK: new plane created successfully\n");
-            }
 
-            if( f->fSel == true ){
-                Sysprintf("VDK: face %p is selected\n");
-            }
-
-            if( b->bSel == true ){
-                Sysprintf("VDK: brush %p, is selected\n");
-            }
-
-          
-        }
-
-  
 };

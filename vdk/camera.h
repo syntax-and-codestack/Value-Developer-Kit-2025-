@@ -7,7 +7,7 @@
 
 class camera_t{
 public:
- camera_t();
+ camera_t(camera_t * camera);
  ~camera_t();
 
    vec3_t origin;
@@ -29,6 +29,6 @@ public:
 
 };
 
-camera_t * cam();
+void CamwndAdd(HWND* CWND);//had to add this crap
 
 #endif

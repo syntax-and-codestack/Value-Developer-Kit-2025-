@@ -16,7 +16,7 @@ const char* FILE_BRUSH = "&Brush";
 const char* FILE_MISC = "&Misc";
 const char* FILE_FILTER = "&Filter";
 const char* FILE_PLUGIN = "&Plugin";
-const char& FILE_HELP = "&Help";
+const char* FILE_HELP = "&Help";
 
 void FillMenu( HMENU * menu, const char* file );
 
