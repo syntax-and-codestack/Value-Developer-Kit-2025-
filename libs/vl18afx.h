@@ -20,6 +20,7 @@ public:
   HWND * d_XZWnd;//xz grid window
   HWND * d_YZWnd;//yz grid window
   HWND * d_TextureWnd;//texture window
+  HWND * d_ConsoleWnd;//console window
 
   //dialogs...
   HWND * d_FilterDlg;
