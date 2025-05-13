@@ -1,4 +1,6 @@
 //textool.h
+//programmed by mangoz 
+//this file is part of @Value-Developer-Kit-2025
 
 #ifndef TEXTOOL_H
 #define TEXTOOL_H
