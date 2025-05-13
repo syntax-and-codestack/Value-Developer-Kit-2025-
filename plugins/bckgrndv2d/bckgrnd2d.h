@@ -21,6 +21,12 @@ public:
    bool ZoomIn();
    bool ZoomOut();
 
+   enum{
+     XY,
+     XZ,
+     YZ
+   }
+
    void * m2DGridRelease(){
       delete []m2DCols;
       delete []mwDRows;
