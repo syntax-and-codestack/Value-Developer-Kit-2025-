@@ -13,10 +13,9 @@ typedef vec_t matrix4x4[16];
 #define PLANE_Y 1
 #define PLANE_Z 2
 
-void SnapVector( vec3_t vector );
+void SnapVector(vec3_t vector);
 /*!NOTE
    m4x4 looks like this..
-
                 x  y  z
    x axis        ( 0  1  2)
    y axis        ( 4  5  6)

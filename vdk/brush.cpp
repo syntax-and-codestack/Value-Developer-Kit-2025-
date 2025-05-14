@@ -64,7 +64,7 @@ face_t* Alloc_Face() {
 }
 
 //DOES NOT DRAW FACES ONLY SETS BRUSH FACE DATA!!!
-void Brush_Faces(brush_t* b, face_t* f){ 
+void Brush_Faces(brush_t* b, face_t* f) {
 	//I know thos codes bad :)
 	b->brushface[0] = f;	b->brushface[1] = f; b->brushface[2] = f;
 	b->brushface[3] = f; b->brushface[4] = f; b->brushface[5] = f;

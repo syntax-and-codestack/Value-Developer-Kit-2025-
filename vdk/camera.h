@@ -11,30 +11,33 @@ typedef enum
 	cd_solid,
 	cd_texture,
 	cd_light,
-//  cd_blend
+	//  cd_blend
 } camera_draw_mode;
 
-class camera_t{
+class camera_t {
 public:
-   camera_t(camera_t * camera);
-   ~camera_t();
+	camera_t(camera_t* camera);
+	~camera_t();
 
-   vec3_t origin;
-   vec3_t angles;
-   vec3_t view;
+	vec3_t origin;
+	vec3_t angles;
+	vec3_t view;
 
-   vec_t m_projectPoint[3];
+	vec_t m_projectPoint[3];
 
-   bool bCameraFakeLighting;
-   bool bCameraRealLighting;
+	bool bCameraFakeLighting;
+	bool bCameraRealLighting;
 
-   void ShowEntity( entity_t * e );
-   void ShowBrushes( brush_t * b );
-   void ShowTextures( texdef_t * t );
-   void Camera_ProjectMatrix( vec3_t m4x4[16] );
-   void ShowFaces( face_t * f );
+	void ShowEntity(entity_t* e);
+	void ShowBrushes(brush_t* b);
+	void ShowTextures(texdef_t* t);
+	void Camera_ProjectMatrix(vec3_t m4x4[16]);
+	void ShowFaces(face_t* f);
 
-   void UpdateCamera( camera_t * camera );
+	void UpdateCamera(camera_t* camera);
+
+	float projectionview[4][4];
+	float modelprojection[4][4];
 
 };
 

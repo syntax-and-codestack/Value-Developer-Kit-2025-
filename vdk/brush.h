@@ -14,7 +14,7 @@ const char* Brush_Name(brush_t* b);
 face_t* Alloc_Face(face_t* f);
 plane_t* Alloc_Plane(plane_t* p);
 
-void Construct_Brush(brush_t* b, vec3_t bMins, vec3_t bMaxs, bool bSel, texdef_t * texture);
+void Construct_Brush(brush_t* b, vec3_t bMins, vec3_t bMaxs, bool bSel, texdef_t* texture);
 brush_t* Create_Brush(brush_t* b);
 
 bool BrushIsSelected(brush_t* b);
@@ -38,37 +38,36 @@ void Brush_MakeFace(brush_t* b, face_t* f);
 //drag the selected brush
 void Drag_BrushSel(brush_t* b);
 
-void Brush_AddToBspList( brush_t * b, brush_t * blst );
+void Brush_AddToBspList(brush_t* b, brush_t* blst);
 void Brush_BspBuild(brush_t* b);
 
-brush_t * Brush_Copy(brush_t* b);
-brush_t * Brush_FullCopy(brush_t * b);
+brush_t* Brush_Copy(brush_t* b);
+brush_t* Brush_FullCopy(brush_t* b);
 
-void Brush_Resize(brush_t * b, vec3_t bMin, vec3_t bMax);
-void Brush_DrawFace( brush_t * b, face_t * f, int GL );
-void Brush_DrawXY( brush_t * b, int view_t );
-void Brush_DrawXZ( brush_t * b, int view_t );
-void Brush_DrawYZ( brush_t * b, int view_t );
+void Brush_Resize(brush_t* b, vec3_t bMin, vec3_t bMax);
+void Brush_DrawFace(brush_t* b, face_t* f, int GL);
+void Brush_DrawXY(brush_t* b, int view_t);
+void Brush_DrawXZ(brush_t* b, int view_t);
+void Brush_DrawYZ(brush_t* b, int view_t);
 
-int Brush_MemoryInfo(brush_t * b);
+int Brush_MemoryInfo(brush_t* b);
 
-void Brush_MakeSides( int sides );
-void Brush_MakeCuboid( brush_t * b, int sides[6], vec3_t bMins, vec3_t bMaxs );
-void Brush_MoveSel(brush_t * b, const vec3_t movesel );
+void Brush_MakeSides(int sides);
+void Brush_MakeCuboid(brush_t* b, int sides[6], vec3_t bMins, vec3_t bMaxs);
+void Brush_MoveSel(brush_t* b, const vec3_t movesel);
 
-bool Brush_bCaulked(brush_t * b, texdef_t * t);
+bool Brush_bCaulked(brush_t* b, texdef_t* t);
 
-void Brush_Rotate( brush_t * b, vec3_t bAngle, vec3_t bOrigin );
-void Brush_DeleteDummyFaces(brush_t * b);
+void Brush_Rotate(brush_t* b, vec3_t bAngle, vec3_t bOrigin);
+void Brush_DeleteDummyFaces(brush_t* b);
 
 void Brush_LockEpair(brush_t* b, const char* key, const char* value);
 
-int MakePlanePoint( float * f );
-void Face_Free( face_t * f );
+int MakePlanePoint(float* f);
+void Face_Free(face_t* f);
 
-face_t * Face_Copy(face_t * f);
-face_t * Face_FullCopy( face_t * f );
+face_t* Face_Copy(face_t* f);
+face_t* Face_FullCopy(face_t* f);
 
-void Face_SetTexture( face_t * f, const char pName );
+void Face_SetTexture(face_t* f, const char pName);
 ;
-

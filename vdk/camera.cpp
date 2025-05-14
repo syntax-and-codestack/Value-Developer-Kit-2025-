@@ -10,6 +10,8 @@ extern face_t * f;
 #include "camera.h"
 #include "vl18afx.h"
 
+//FIX THIS FILE
+
 camera_t::camera_t(camera_t * camera)
 {
 			g_fCamTick++;

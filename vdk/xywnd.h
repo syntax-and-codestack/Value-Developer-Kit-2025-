@@ -5,19 +5,22 @@
 
 #include "vl18afx.h"
 
-class XYWnd{
+class XYWnd {
 public:
-  XYWnd(HWND pWnd);
-  ~XYWnd(HWND pWnd);
+	XYWnd();
+	~XYWnd();
 
-int width, height;
-int x, y;
+	int width, height;
+	int x, y;
 
-bool bXYClicked;
-virtual void XYPaintWnd() = 0;
-//will be an array 
-int nXYMouseClicks_Store;
+	bool bXYClicked;
+	virtual void XYPaintWnd() = 0;
+	//will be an array 
+	int nXYMouseClicks_Store;
+
+	void DrawXYLines(XYWnd * xy_ptr, XYWnd& xy);
 
 };
+
 
 #endif
