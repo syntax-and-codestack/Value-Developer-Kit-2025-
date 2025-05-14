@@ -13,26 +13,24 @@ class CWndGuiTable{
 public:
   CWndGuiTable();
 
-  HWND * d_MainWnd;//main window
-  HWND * d_CameraWnd;//camera window
-  HWND * d_GridWnd;//grid window holders
-  HWND * d_XYWnd;//xy grid window
-  HWND * d_XZWnd;//xz grid window
-  HWND * d_YZWnd;//yz grid window
-  HWND * d_TextureWnd;//texture window
-  HWND * d_ConsoleWnd;//console window
+  HWND d_MainWnd;//main window
+  HWND d_CameraWnd;//camera window
+  HWND d_GridWnd;//grid window holders
+  HWND d_XYWnd;//xy grid window
+  HWND d_XZWnd;//xz grid window
+  HWND d_YZWnd;//yz grid window
+  HWND d_TextureWnd;//texture window
+  HWND d_ConsoleWnd;//console window
 
   //dialogs...
-  HWND * d_FilterDlg;
-  HWND * d_BPDlg;
-  HWND * d_CapDlg;
-  HWND * d_NodeDlg;
+  HWND d_FilterDlg;
+  HWND d_BPDlg;
+  HWND d_CapDlg;
+  HWND d_NodeDlg;
 
   //toolbar
-  HWND * d_Toolbar;
+  HWND d_Toolbar;
 
   //menu
-  HMENU * d_Menu;
+  HMENU d_Menu;
 };
-
-CWndGuiTable * AddWidget();
