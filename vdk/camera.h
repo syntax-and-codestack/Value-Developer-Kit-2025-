@@ -30,5 +30,6 @@ public:
 };
 
 void CamwndAdd(HWND* CWND);//had to add this crap
+void BufferCamera(camera_t* camera, static char cBuff[1024]);
 
 #endif
