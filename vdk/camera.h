@@ -5,10 +5,19 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 
+typedef enum
+{
+	cd_wire,
+	cd_solid,
+	cd_texture,
+	cd_light,
+//  cd_blend
+} camera_draw_mode;
+
 class camera_t{
 public:
- camera_t(camera_t * camera);
- ~camera_t();
+   camera_t(camera_t * camera);
+   ~camera_t();
 
    vec3_t origin;
    vec3_t angles;
