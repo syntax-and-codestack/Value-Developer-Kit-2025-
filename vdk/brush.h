@@ -101,3 +101,5 @@ void Brush_MakeTrigger(brush_t * b, const char* tScript );
 void Shear_BrushEdge(brush_t * b);
 const char* Brush_ShowDimensions(brush_t * b, const char * dimtxt);
 void Brush_SnapToGrid(brush_t * b, vec3_t snap);
+void Fit_BrushTexture(brush_t * b, texdef_t * t, float width, float height);
+brush_t * Return_Brush(brush_t * b);//simply return b
