@@ -97,6 +97,8 @@ void Brush_MakeHollow(brush_t * b);
 bool Brush_Hollow(brush_t * b);
 brush_t * Brush_MakeArch(brush_t * b, vec_t curve);
 vec3_t Brush_Indices[12];
+void Brush_MakeClip(brush_t * b, const char* tScript);
+void Brush_MakeVolume(brush_t * b, const char* tScript);
 void Brush_MakeTrigger(brush_t * b, const char* tScript );
 void Shear_BrushEdge(brush_t * b);
 const char* Brush_ShowDimensions(brush_t * b, const char * dimtxt);
