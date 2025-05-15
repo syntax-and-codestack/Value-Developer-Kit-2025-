@@ -107,3 +107,7 @@ void Fit_BrushTexture(brush_t * b, texdef_t * t, float width, float height);
 brush_t * Return_Brush(brush_t * b);//simply return b
 void Brush_Faces(brush_t * b, face_t * f);
 float BrushClamp(brush_t * b);
+void Brush_Scale( brush_t * b );
+brush_t* Brush_Merge( brush_t* b1, brush_t * b2, int polyhederon );
+brush_t* Brush_LinkPairs(brush_t * blist, int poly, const char * key, const char * value );
+brush_t* Brush_LinkLists(brush_t * blists);
