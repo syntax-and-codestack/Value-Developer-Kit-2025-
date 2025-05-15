@@ -14,7 +14,9 @@ int CALLBACK WinMain(
 	return main(__argc, __argv);
 }
 
+/*
 int main() {
 	glInitNames();
 	return main();
 };
+*/
