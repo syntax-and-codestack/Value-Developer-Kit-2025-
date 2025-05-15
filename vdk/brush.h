@@ -8,6 +8,8 @@ brush_t* Alloc_Brush();
 brush_t* Brush_SetCount(brush_t* b);
 brush_t* Brush_Dummy(brush_t* b);
 std::size_t BrushSize();
+const char* BrushFace_Name(face_t * f);
+const char* BrushPlane_Name(plane_t * p);
 const char* Brush_Name(brush_t* b);
 face_t* Alloc_Face(face_t* f);
 plane_t* Alloc_Plane(plane_t* p);
