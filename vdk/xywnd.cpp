@@ -11,7 +11,7 @@
 #define XY_BKGRND_BLOCK 0x2
 
 //standard is red
-#define XY_BRUSH_SELECT_COLOR 1
+#define XY_BRUSH_SELECT_COLOR 0xFF474C
 
 extern face_t xy_faces;
 extern brush_t xy_brushes;
