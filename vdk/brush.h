@@ -83,3 +83,5 @@ void BP_BrushSet_MatTexdefCoords( brush_t * b, vec3_t MA[3], vec3_t MB[3] );
 void Brush_Print( brush_t * b );
 void Brush_PrintPlane( plane_t * p, brush_t * b );
 void Brush_PrintFace( face_t * f, brush_t * b );
+void Brush_PrintVectors( vec3_t v, brush_t * b );
+
