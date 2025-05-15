@@ -105,5 +105,5 @@ const char* Brush_ShowDimensions(brush_t * b, const char * dimtxt);
 void Brush_SnapToGrid(brush_t * b, vec3_t snap);
 void Fit_BrushTexture(brush_t * b, texdef_t * t, float width, float height);
 brush_t * Return_Brush(brush_t * b);//simply return b
-void Brush_Faces(brush_t * b);
+void Brush_Faces(brush_t * b, face_t * f);
 float BrushClamp(brush_t * b);
