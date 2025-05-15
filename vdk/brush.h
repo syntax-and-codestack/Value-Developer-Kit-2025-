@@ -85,3 +85,6 @@ void Brush_PrintPlane( plane_t * p, brush_t * b );
 void Brush_PrintFace( face_t * f, brush_t * b );
 void Brush_PrintVectors( vec3_t v, brush_t * b );
 
+brush_t * Brush_MakePyramid( brush_t * b );
+brush_t * Brush_MakeSphere( brush_t * b );
+
