@@ -111,3 +111,5 @@ void Brush_Scale( brush_t * b );
 brush_t* Brush_Merge( brush_t* b1, brush_t * b2, int polyhederon );
 brush_t* Brush_LinkPairs(brush_t * blist, int poly, const char * key, const char * value );
 brush_t* Brush_LinkLists(brush_t * blists);
+void Brush_AddVariable( const char* pName, float f, const char * pInput = NULL );
+int Brush_Vertpoint(brush_t * b);
