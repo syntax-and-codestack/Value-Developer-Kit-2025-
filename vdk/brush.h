@@ -96,3 +96,4 @@ void Split_Brush(brush_t * b, int split);
 void Brush_MakeHollow(brush_t * b);
 bool Brush_Hollow(brush_t * b);
 brush_t * Brush_MakeArch(brush_t * b, vec_t curve);
+vec3_t Brush_Indices[12];
