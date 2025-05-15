@@ -70,4 +70,15 @@ face_t* Face_Copy(face_t* f);
 face_t* Face_FullCopy(face_t* f);
 
 void Face_SetTexture(face_t* f, const char pName);
-;
+
+//get the brush name and string to list... maybe function might change
+const std::string Brush_String( brush_t * b );
+
+int Brush_Side( brush_t * b );
+
+vec_t Brush_SarrusDet(vec3_t a, vec3_t b, vec3_t c);
+
+void BP_BrushSet_MatTexdefCoords( brush_t * b, vec3_t MA[3], vec3_t MB[3] );
+
+void Brush_Print( brush_t * b );
+void Brush_PrintPlane( plane_t * p, brush_t
