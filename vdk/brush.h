@@ -90,3 +90,8 @@ vec3_t Brush_TextureCoordinates[18];
 brush_t * Brush_ConstructMenu(brush_t* b);
 const char * Brush_MenuStrings[8];
 void Select_BrushVertice(brush_t * b, float v);
+void Brush_DragTexFree(brush_t * b, texdef_t * t);
+void Brush_FaceDragTexture(brush_t * b, face_t * f, texdef_t * t);
+void Split_Brush(brush_t * b, int split);
+void Brush_MakeHollow(brush_t * b);
+bool Brush_Hollow(brush_t * b);
