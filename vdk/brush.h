@@ -120,3 +120,4 @@ void Brush_ToggleValue(brush_t * b);
 typedef brush_t bspbrush_t;
 bspbrush_t * BspChop_Brush(bspbrush_t * b);
 void Bsp_FindBrush(bspbrush_t * b);
+int brushSelect_MouseArray[];//store mouse clicks
