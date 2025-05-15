@@ -115,3 +115,8 @@ brush_t* Brush_LinkPairs(brush_t * blist, int poly, const char * key, const char
 brush_t* Brush_LinkLists(brush_t * blists);
 void Brush_AddVariable( const char* pName, float f, const char * pInput = NULL );
 int Brush_Vertpoint(brush_t * b);
+void Brush_ToggleKey(brush_t * b);
+void Brush_ToggleValue(brush_t * b);
+typedef brush_t bspbrush_t;
+bspbrush_t * BspChop_Brush(bspbrush_t * b);
+void Bsp_FindBrush(bspbrush_t * b);
