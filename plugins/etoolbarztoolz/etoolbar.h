@@ -23,7 +23,8 @@ public:
       eButton,
       eBmpButton,
       eToggle,
-      eCheck
+      eCheck,
+      eSpacer
    }EToolbarType;
 };
 
