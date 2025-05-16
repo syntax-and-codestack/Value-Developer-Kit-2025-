@@ -15,7 +15,8 @@ public:
 
     virtual unsigned char * EButtonImage() = 0;
     virtual void CreateEToolbar(EToolbar * Toolbar, int buttons, int nStyle, int x, int y, int width, int height, const char* Name) = 0;
-    
+    virtual void CreateEButton(EToolbar& Toolbar, int style, const char* IMG);
+
    enum
    {
       eButton,
