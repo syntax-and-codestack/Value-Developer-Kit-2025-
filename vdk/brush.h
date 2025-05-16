@@ -121,3 +121,4 @@ typedef brush_t bspbrush_t;
 bspbrush_t * BspChop_Brush(bspbrush_t * b);
 void Bsp_FindBrush(bspbrush_t * b);
 int brushSelect_MouseArray[];//store mouse clicks
+brush_t* Brush_FilterClient(brush_t * b);
