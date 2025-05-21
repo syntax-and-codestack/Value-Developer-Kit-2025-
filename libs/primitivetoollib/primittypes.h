@@ -49,6 +49,7 @@ typedef struct brush_s{
       const char * bEpair[2];// bKey, bValue
       int points[8];
       int sides[6];//again... [brushface]
+      side_t * brush_sidewindings();
       const char * brushshader;
       texdef_t * brushtexdef;
       bool bRegion;//is region brush
