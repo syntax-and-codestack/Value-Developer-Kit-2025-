@@ -6,7 +6,7 @@
 #include "brush.h"
 
 //brush global variables...
-int g_nBrushId;
+int g_nBrushId = 0;
 
 /*
  Brush Sides
