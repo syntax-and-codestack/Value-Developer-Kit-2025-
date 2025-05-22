@@ -13,6 +13,7 @@ face_t* Face_SetCount(brush_t* b, face_t * f);
 const char* BrushFace_Name(face_t * f);
 const char* BrushPlane_Name(plane_t * p);
 const char* Brush_Name(brush_t* b);
+char* Brush_Buffer(brush_t* b);
 face_t* Face_Dummy(brush_t* b, face_t * f);
 plane_t* Plane_Dummy(brush_t* b, plane_t* p);
 face_t* Alloc_Face();
