@@ -23,7 +23,7 @@ brush_t* Create_Brush(brush_t* b);//done
 bool BrushIsSelected(brush_t* b);
 bool Brush_FaceSelected(face_t* f, brush_t* b);
 bool bBrushPrimitMode;//single use not member
-void Free_Brush(brush_t* b);
+void Free_Brush(brush_t* b);//done
 void SelectBrush(brush_t* b);
 void SelectFace(face_t* f);
 void Brush_SetTexdef(brush_t* b, texdef_t* t);
@@ -56,7 +56,7 @@ face_t* Face_Copy(face_t* f);
 face_t* Face_FullCopy(face_t* f);
 void Face_SetTexture(face_t* f, const char pName);
 //get the brush name and string to list... maybe function might change
-const std::string Brush_String( brush_t * b );
+const std::string Brush_String( brush_t * b );//done
 int Brush_Side( brush_t * b );//done
 vec_t Brush_SarrusDet(vec3_t a, vec3_t b, vec3_t c);
 void BP_BrushSet_MatTexdefCoords( brush_t * b, vec3_t MA[3], vec3_t MB[3] );
@@ -67,8 +67,8 @@ void Brush_PrintVectors( vec3_t v, brush_t * b );
 brush_t * Brush_MakePyramid( brush_t * b );
 brush_t * Brush_MakeSphere( brush_t * b );
 brush_t * Brush_MakeCylinder( brush_t * b );
-void Delete_Brush( brush_t * b );
-brush_t * Brush_Tall(brush_t * b);
+void Delete_Brush( brush_t * b );//done
+brush_t * Brush_Tall(brush_t * b);//done
 void Compute_BrushBaseAxis( brush_t * b );
 brush_t * Brush_MakePatch( brush_t * b );
 int Brush_SetSpawnflags( brush_t * b );
