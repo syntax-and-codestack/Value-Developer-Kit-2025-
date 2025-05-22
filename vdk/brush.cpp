@@ -149,11 +149,6 @@ brush_t * Create_Brush(brush_t * b){
  Brush_LinkLists
 =================
 */
-brush_t * Brush_LinkLists(brush_t * brushes){
-        brushes++;
-        Brush_Name(brushes) + brushes = Brush_Name(brushes);
-  return brushes;
-}
 
 /*
 ============
