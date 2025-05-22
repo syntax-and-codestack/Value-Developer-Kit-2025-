@@ -6,8 +6,8 @@
 
 int g_nBrushId = 0;
 
-#define BRUSH_MIN_COORD_MIN -99999
-#define BRUSH_MIN_COORD_MAX +99999
+#define BRUSH_WORLD_COORD_MIN -99999
+#define BRUSH_WORLD_COORD_MAX +99999
 
 /*
 =================
@@ -166,6 +166,50 @@ char * Brush_Buffer(brush_t * b){
 const std::string Brush_String(brush_t * b){
       Brush_String(b).c_str();
   return Brush_String(b);
+}
+
+/*
+============
+ Free_Brush
+============
+*/
+void Free_Brush(brush_t * b){
+     free(b);
+}
+
+/*
+==============
+ Delete_Brush
+==============
+*/
+void Delete_Brush(brush_t * b){
+    delete []b;
+}
+
+/*
+============
+ Brush_Tall
+============
+*/
+brush_t * Brush_Tall(brush_t * b){
+   if( BrushSize >= BRUSH_WORLD_COORD_MAX ){
+       Sysprintf("Brush %i is greater then the max brush coord size allowed\n");
+       Free_Brush(b);
+   }
+ return b;
+}
+
+/*
+========================
+ Brush_DeleteDummyFaces
+========================
+*/
+void Brush_DeleteDummyFaces(brush_t * b){
+     if( b = Brush_Dummy(b) ){
+        delete b->brushface[6];
+       //delete the faces 
+       //which is pretty much the brush itself
+     }
 }
 
 /*
