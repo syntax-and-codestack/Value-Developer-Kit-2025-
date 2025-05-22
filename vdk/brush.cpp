@@ -159,6 +159,16 @@ char * Brush_Buffer(brush_t * b){
 }
 
 /*
+==============
+ Brush_String
+==============
+*/
+const std::string Brush_String(brush_t * b){
+      Brush_String(b).size();
+  return Brush_String(b);
+}
+
+/*
 =================
  Brush_LinkLists
 =================
