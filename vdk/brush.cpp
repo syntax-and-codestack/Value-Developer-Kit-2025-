@@ -145,6 +145,20 @@ brush_t * Create_Brush(brush_t * b){
 }
 
 /*
+==============
+ Brush_Buffer
+==============
+*/
+char * Brush_Buffer(brush_t * b){
+    static char brushBuffer[2048];
+    for( b->bnumId++ ){
+         Brush_Name(b);
+         sprintf(brushBuffer, "Buffer Brush GL %i\n", b->bnumId);
+    }
+ return brushBuffer;
+}
+
+/*
 =================
  Brush_LinkLists
 =================
