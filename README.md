@@ -1,1 +1,1 @@
-# Value-Developer-Kit-2025-
+# Value-Developer-Kit-2025
