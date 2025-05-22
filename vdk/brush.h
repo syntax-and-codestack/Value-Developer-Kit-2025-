@@ -47,7 +47,7 @@ void Brush_ConstructCuboid(brush_t* b, int sides[6], vec3_t bMins, vec3_t bMaxs)
 void Brush_MoveSel(brush_t* b, const vec3_t movesel);
 bool Brush_bCaulked(brush_t* b, texdef_t* t);
 void Brush_Rotate(brush_t* b, vec3_t bAngle, vec3_t bOrigin);
-void Brush_DeleteDummyFaces(brush_t* b);
+void Brush_DeleteDummyFaces(brush_t* b);//done
 void Brush_LockEpair(brush_t* b, const char* key, const char* value);//done
 int MakePlanePoint(float* f);
 void Plane_Free(plane_t* p);
