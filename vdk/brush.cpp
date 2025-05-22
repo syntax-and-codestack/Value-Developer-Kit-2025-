@@ -4,8 +4,10 @@
 
 #include <n18?global.h>
 
-//---Brush Globals
 int g_nBrushId = 0;
+
+#define BRUSH_MIN_COORD_MIN -99999
+#define BRUSH_MIN_COORD_MAX +99999
 
 /*
 =================
@@ -91,6 +93,42 @@ brush_t * Brush_FullCopy(brush_t * b){
       memcpy( b, Alloc_Brush(), sizeof(brush_t));
  
   return b;
+}
+
+/*
+============
+ Brush Size
+============
+*/
+std::size_t BrushSize(){
+     brush_t *brush = nullptr;
+ 
+     for( brush; brush++; brush ){
+          brush->mins;
+          brush->maxs;
+     }
+ 
+  return sizeof(*brush);
+}
+
+/*
+==============
+ Return_Brush
+==============
+*/
+brush_t* Return_Brush(brush_t * b){
+    return b;
+}
+
+/*
+=================
+ Brush_LinkLists
+=================
+*/
+brush_t * Brush_LinkLists(brush_t * brushes){
+        brushes++;
+        Brush_Name(brushes) + brushes = Brush_Name(brushes) = new char;
+  return brushes;
 }
 
 /*
