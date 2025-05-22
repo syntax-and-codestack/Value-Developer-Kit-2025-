@@ -104,5 +104,5 @@ int Brush_Side(brush_t *b){
          b->brush_sidewindings()->Side_WindingsFace(SIDE_RIGHT[b->sides][2]); b->brush_sidewindings()->Side_WindingsFace(SIDE_BACK[b->sides][3]);
          b->brush_sidewindings()->Side_WindingsFace(SIDE_BOTTOM[b->sides][4]); b->brush_sidewindings()->Side_WindingsFace(SIDE_TOP[b->sides][5]);
    }
-  return b->sides;
+  return b->sides[6];
 }
