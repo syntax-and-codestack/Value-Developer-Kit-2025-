@@ -1,26 +1,9 @@
-
+#include "brush.h"
 //brush.cpp
 //programmed by mangoz 
 //this file is part of @Value-Developer-Kit-2025
 
-#include "brush.h"
-
-//brush global variables...
 int g_nBrushId = 0;
-
-/*
-============
- Brush_Side
-============
-*/
-int Brush_Side(brush_t *b){
-   for( b->sides; b; b++ ){
-         b->brush_sidewindings()->Side_WindingsFace(SIDE_FRONT[b->sides][0]); b->brush_sidewindings()->Side_WindingsFace(SIDE_LEFT[b->sides][1]);
-         b->brush_sidewindings()->Side_WindingsFace(SIDE_RIGHT[b->sides][2]); b->brush_sidewindings()->Side_WindingsFace(SIDE_BACK[b->sides][3]);
-         b->brush_sidewindings()->Side_WindingsFace(SIDE_BOTTOM[b->sides][4]); b->brush_sidewindings()->Side_WindingsFace(SIDE_TOP[b->sides][5]);
-   }
-  return b->sides;
-}
 
 /*
 =================
@@ -41,7 +24,7 @@ void Brush_LockEpair(brush_t * b, const char * key, const char * value){
 const char * Brush_Name( brush_t* b ){
       static char cBuff[1024];
       b->bnumId = g_nBrushId++;
-      if( bBrushPrimitMode == true )
+      if( bBrushPrimitMode ? 1 : 0 )
       {
             sprintf(cBuff, "Brush %i", b->bnumId);
             Brush_LockEpair(b, b->bKey, b->bValue);
@@ -106,4 +89,18 @@ brush_t * Brush_FullCopy(brush_t * b){
       memcpy( b, Alloc_Brush(), sizeof(brush_t));
  
   return b;
+}
+
+/*
+============
+ Brush_Side
+============
+*/
+int Brush_Side(brush_t *b){
+   for( b->sides; b; b++ ){
+         b->brush_sidewindings()->Side_WindingsFace(SIDE_FRONT[b->sides][0]); b->brush_sidewindings()->Side_WindingsFace(SIDE_LEFT[b->sides][1]);
+         b->brush_sidewindings()->Side_WindingsFace(SIDE_RIGHT[b->sides][2]); b->brush_sidewindings()->Side_WindingsFace(SIDE_BACK[b->sides][3]);
+         b->brush_sidewindings()->Side_WindingsFace(SIDE_BOTTOM[b->sides][4]); b->brush_sidewindings()->Side_WindingsFace(SIDE_TOP[b->sides][5]);
+   }
+  return b->sides;
 }
