@@ -1,9 +1,8 @@
-#include "brush.h"
 //brush.cpp
 //programmed by mangoz 
 //this file is part of @Value-Developer-Kit-2025
 
-int g_nBrushId = 0;
+#include <n18?global>
 
 /*
 =================
