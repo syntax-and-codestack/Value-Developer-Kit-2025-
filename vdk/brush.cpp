@@ -121,13 +121,37 @@ brush_t* Return_Brush(brush_t * b){
 }
 
 /*
+==============
+ Create_Brush
+==============
+*/
+brush_t * Create_Brush(brush_t * b){
+   b->bnumId;
+   b->bentity;
+   b->brushpln;
+   b->brushface;
+   b->prev->owner->next;
+   b->bSel ? 1 : 0;
+   b->mins;
+   b->maxs;
+   b->bKey;
+   b->bValue;
+   b->points;
+   b->sides;
+   b->brush_sidewindings();
+   b->brushshader;
+   b->brushtexdef;
+   b->bRegion ? 0 : 1;
+}
+
+/*
 =================
  Brush_LinkLists
 =================
 */
 brush_t * Brush_LinkLists(brush_t * brushes){
         brushes++;
-        Brush_Name(brushes) + brushes = Brush_Name(brushes) = new char;
+        Brush_Name(brushes) + brushes = Brush_Name(brushes);
   return brushes;
 }
 
