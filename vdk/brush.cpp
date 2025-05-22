@@ -9,7 +9,9 @@
 int g_nBrushId = 0;
 
 /*
+=============
  Brush Sides
+=============
 */
 int Brush_Side(brush_t *b){
       for( b->sides; b; b++ ){
@@ -20,5 +22,88 @@ int Brush_Side(brush_t *b){
   return b->sides;
 }
 
+/*
+==================
+ Brush Lock Epair
+==================
+*/
+void Brush_LockEpair(brush_t * b, const char * key, const char * value){
+     b->bKey = key;
+     b->bValue = value;
+     b->bEpair[b->bKey, b->bValue];
+}
 
+/*
+============
+ Brush Name
+============
+*/
+const char * Brush_Name( brush_t* b ){
+      static char cBuff[1024];
+      b->bnumId = g_nBrushId++;
+      if( bBrushPrimitMode == true )
+      {
+          sprintf(cBuff, "Brush %i", b->bnumId);
+          Brush_LockEpair(b, b->bKey, b->bValue);
+      }
+  return cBuff;
+}
 
+/*
+=============
+ Alloc Brush
+=============
+*/
+brush_t * Alloc_Brush(){
+   brush_t * b = (brush_t*)malloc(sizeof(brush_t));
+   return b;
+}
+
+/*
+================
+ Brush_SetCount
+================
+*/
+brush_t * Brush_SetCount(brush_t * b){
+      for(b; b->bnumId; b++){
+          Brush_Name(b);
+      }
+  return b;
+}
+
+/*
+=============
+ Brush_Dummy
+=============
+*/
+brush_t * Brush_Dummy(brush_t * b){
+      if(!b){
+        b->sides == [NULL];
+        return NULL;
+      }
+  return b;
+}
+
+/*
+============
+ Brush Copy
+============
+*/
+brush_t * Brush_Copy(brush_t * b){
+   brush_t * brush = b;
+   memcpy( b, brush, sizeof(*brush));
+ 
+ return brush;
+}
+
+/*
+=================
+ Brush Full Copy
+=================
+*/
+brush_t * Brush_FullCopy(brush_t * b){
+      b = Alloc_Brush();
+      memcpy( b, Alloc_Brush(), sizeof(brush_t));
+ 
+  return b;
+}
