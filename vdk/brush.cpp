@@ -4,6 +4,9 @@
 
 #include <n18?global.h>
 
+//---Brush Globals
+int g_nBrushId = 0;
+
 /*
 =================
  Brush_LockEpair
