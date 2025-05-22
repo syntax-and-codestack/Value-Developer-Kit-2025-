@@ -150,10 +150,10 @@ brush_t * Create_Brush(brush_t * b){
 ==============
 */
 char * Brush_Buffer(brush_t * b){
-    static char brushBuffer[2048];
+    static char BrushBuffer[2048];
     for( b->bnumId++ ){
          Brush_Name(b);
-         sprintf(brushBuffer, "Buffer Brush GL %i\n", b->bnumId);
+         sprintf( BrushBuffer, "Buffer Brush GL %i\n", b->bnumId );
     }
  return brushBuffer;
 }
