@@ -155,7 +155,7 @@ char * Brush_Buffer(brush_t * b){
          Brush_Name(b);
          sprintf( BrushBuffer, "Buffer Brush GL %i\n", b->bnumId );
     }
- return brushBuffer;
+ return BrushBuffer;
 }
 
 /*
