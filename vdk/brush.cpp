@@ -43,8 +43,8 @@ const char * Brush_Name( brush_t* b ){
       b->bnumId = g_nBrushId++;
       if( bBrushPrimitMode == true )
       {
-          sprintf(cBuff, "Brush %i", b->bnumId);
-          Brush_LockEpair(b, b->bKey, b->bValue);
+            sprintf(cBuff, "Brush %i", b->bnumId);
+            Brush_LockEpair(b, b->bKey, b->bValue);
       }
   return cBuff;
 }
