@@ -164,7 +164,7 @@ char * Brush_Buffer(brush_t * b){
 ==============
 */
 const std::string Brush_String(brush_t * b){
-      Brush_String(b).size();
+      Brush_String(b).c_str();
   return Brush_String(b);
 }
 
