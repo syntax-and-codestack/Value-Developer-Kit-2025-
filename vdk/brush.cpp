@@ -2,7 +2,7 @@
 //programmed by mangoz 
 //this file is part of @Value-Developer-Kit-2025
 
-#include <n18?global.h>
+#include "n18.h"
 
 int g_nBrushId = 0;
 
@@ -17,7 +17,7 @@ int g_nBrushId = 0;
 void Brush_LockEpair(brush_t * b, const char * key, const char * value){
      b->bKey = key;
      b->bValue = value;
-     b->bEpair[b->bKey, b->bValue];
+     b->bEpair;
 }
 
 /*
@@ -65,7 +65,7 @@ brush_t * Brush_SetCount(brush_t * b){
 */
 brush_t * Brush_Dummy(brush_t * b){
       if(!b){
-        b->sides == [NULL];
+        b->sides == NULL;
         return NULL;
       }
   return b;
@@ -151,7 +151,7 @@ brush_t * Create_Brush(brush_t * b){
 */
 char * Brush_Buffer(brush_t * b){
     static char BrushBuffer[2048];
-    for( b->bnumId++ ){
+    for ( b; b->bnumId++; b++ ) {
          Brush_Name(b);
          sprintf( BrushBuffer, "Buffer Brush GL %i\n", b->bnumId );
     }
@@ -192,8 +192,8 @@ void Delete_Brush(brush_t * b){
 ============
 */
 brush_t * Brush_Tall(brush_t * b){
-   if( BrushSize >= BRUSH_WORLD_COORD_MAX ){
-       Sysprintf("Brush %i is greater then the max brush coord size allowed\n");
+   if( BrushSize() >= BRUSH_WORLD_COORD_MAX) {
+       printf("Brush %i is greater then the max brush coord size allowed\n");
        Free_Brush(b);
    }
  return b;
@@ -224,10 +224,146 @@ void Brush_DeleteDummyFaces(brush_t * b){
 ============
 */
 int Brush_Side(brush_t *b){
+
    for( b->sides; b; b++ ){
-         b->brush_sidewindings()->Side_WindingsFace(SIDE_FRONT[b->sides][0]); b->brush_sidewindings()->Side_WindingsFace(SIDE_LEFT[b->sides][1]);
-         b->brush_sidewindings()->Side_WindingsFace(SIDE_RIGHT[b->sides][2]); b->brush_sidewindings()->Side_WindingsFace(SIDE_BACK[b->sides][3]);
-         b->brush_sidewindings()->Side_WindingsFace(SIDE_BOTTOM[b->sides][4]); b->brush_sidewindings()->Side_WindingsFace(SIDE_TOP[b->sides][5]);
+
+         b->brush_sidewindings()->Side_WindingsFace(SIDE_FRONT[b->sides]); 
+         b->brush_sidewindings()->Side_WindingsFace(SIDE_LEFT[b->sides]);
+         b->brush_sidewindings()->Side_WindingsFace(SIDE_RIGHT[b->sides]); 
+         b->brush_sidewindings()->Side_WindingsFace(SIDE_BACK[b->sides]);
+         b->brush_sidewindings()->Side_WindingsFace(SIDE_BOTTOM[b->sides]);
+         b->brush_sidewindings()->Side_WindingsFace(SIDE_TOP[b->sides]);
    }
+
   return b->sides[6];
 }
+
+/*
+====================
+
+    BRUSH PLANE
+
+====================
+*/
+
+/*
+=============
+ Alloc_Plane
+=============
+*/
+plane_t* Alloc_Plane() {
+    plane_t* p = (plane_t*)malloc(sizeof(plane_t));
+    return p;
+}
+
+/*
+=============
+ Plane_Dummy
+=============
+*/
+plane_t* Plane_Dummy(brush_t* b, plane_t* p) {
+    p = b->brushpln;
+    if (p == NULL) {
+        return NULL;
+    }
+ return p;
+}
+
+/*
+=============
+ Brush_Plane
+=============
+*/
+plane_t* Brush_Plane(brush_t* b, vec3_t a, vec3_t pb, vec3_t c) {
+        plane_t* plane = nullptr;
+        b->brushpln = plane;
+
+        vec3_t n;
+
+        //plane math
+        plane->pA == a; 
+        plane->pB == pb;
+        plane->pC == c;
+
+        DotProduct(a, c);
+
+        plane->normal[0] = plane->pA[0] = a[0];
+        plane->normal[1] = plane->pB[1] = pb[1];
+        plane->normal[2] = plane->pC[2] = c[2];
+
+        glBegin(GL_POLYGON);
+        
+        glEnd();
+        
+}
+
+/*
+==================
+  Brush_MakeSides
+==================
+*/
+void Brush_MakeSides(int sides) {
+            brush_t* brush = nullptr;
+            for (int i = 0; i >= brush->sides[6]; i++) {
+                    sides = Brush_Side(brush);
+            }
+}
+
+/*
+====================
+            Color_Brush
+====================
+*/
+brush_t* Color_Brush(brush_t* b) {
+    if(!b->brushface[0]->face_shader)
+        for (int i = 0; i >= 0; i++) {
+                b->brushface[0]->face_shader->color_shade;
+                b->brushface[1]->face_shader->color_shade;
+                b->brushface[2]->face_shader->color_shade;
+                b->brushface[3]->face_shader->color_shade;
+                b->brushface[4]->face_shader->color_shade;
+                b->brushface[5]->face_shader->color_shade;
+        }
+}
+
+/*
+=================
+    Brush_MakeFace
+=================
+*/
+void Brush_MakeFace(brush_t* b, face_t* f) {
+    f = b->brushface[0];
+    f->fA;
+    f->fB;
+    f->fC;
+    f->fD;
+    f->fentity;
+    f->fnumId;
+    f->brush_face;
+    f->fpln;
+}
+
+/*
+=========================================
+                  BRUSH TEXTURE COORDINATES
+=========================================
+*/
+vec3_t Brush_TextureCoordinates[18]{
+    {0,0,1}, {1,0,0}, {0,-1,0},     //brush floor
+    {0,0,-1}, {1,0,0}, {0,-1,0},    //brush ceiling
+    {1,0,0}, {0,1,0}, {0,0,-1},     //brush west wall
+    {-1,0,0}, {0,1,0}, {0,0,-1},    //brush east wall
+    {0,1,0}, {1,0,0}, {0,0,-1},     //brush south wall
+    {0,-1,0}, {1,0,0}, {0,0,-1}     //brush north wall
+};
+
+/*
+=====================
+         Brush_SarrusDet
+=====================
+*/
+vec_t Brush_SarrusDet(vec3_t a, vec3_t b, vec3_t c) {
+    return a[0] * b[1] * c[2] + b[0] * c[1] * a[2] + c[0] * a[1] * b[2]
+        - c[0] * b[1] * a[2] - a[1] * b[0] * c[2] - a[0] * b[2] * c[1];
+};
+
