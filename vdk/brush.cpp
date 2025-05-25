@@ -5,8 +5,9 @@
 #include "n18.h"
 
 int g_nBrushId = 0;
+int g_nBrushSide = 0;
 
-#define BRUSH_WORLD_COORD_MIN -99999
+#define BRUSH_WORLD_COORD_MIN -999993t
 #define BRUSH_WORLD_COORD_MAX +99999
 
 /*
@@ -349,12 +350,24 @@ void Brush_MakeFace(brush_t* b, face_t* f) {
 =========================================
 */
 vec3_t Brush_TextureCoordinates[18]{
-    {0,0,1}, {1,0,0}, {0,-1,0},     //brush floor
-    {0,0,-1}, {1,0,0}, {0,-1,0},    //brush ceiling
-    {1,0,0}, {0,1,0}, {0,0,-1},     //brush west wall
-    {-1,0,0}, {0,1,0}, {0,0,-1},    //brush east wall
-    {0,1,0}, {1,0,0}, {0,0,-1},     //brush south wall
-    {0,-1,0}, {1,0,0}, {0,0,-1}     //brush north wall
+    {0,0,1},
+    {1,0,0}, 
+    {0,-1,0},     //brush floor
+    {0,0,-1}, 
+    {1,0,0}, 
+    {0,-1,0},    //brush ceiling
+    {1,0,0}, 
+    {0,1,0}, 
+    {0,0,-1},     //brush west wall
+    {-1,0,0}, 
+    {0,1,0},
+    {0,0,-1},    //brush east wall
+    {0,1,0},
+    {1,0,0}, 
+    {0,0,-1},     //brush south wall
+    {0,-1,0},
+    {1,0,0}, 
+    {0,0,-1}     //brush north wall
 };
 
 /*
@@ -367,3 +380,199 @@ vec_t Brush_SarrusDet(vec3_t a, vec3_t b, vec3_t c) {
         - c[0] * b[1] * a[2] - a[1] * b[0] * c[2] - a[0] * b[2] * c[1];
 };
 
+/*
+========================
+             Brush_EpairMode
+========================
+*/
+bool Brush_EpairMode(brush_t* b) {
+        if ( bBrushPrimitMode == true && b->bSel ? 1 : !0 ) {
+                for ( b; b->bEpair; b++ )
+                {
+                        b->bKey++;
+                        b->bValue++;
+                        Brush_LockEpair(b, b->bKey, b->bValue);
+                }
+        }
+}
+
+/*
+=============
+        Alloc_Face
+=============
+*/
+face_t* Alloc_Face() {
+    face_t* face = (face_t*)malloc(sizeof(face_t));
+    return face;
+}
+
+/*
+===========
+   Face_Dummy
+===========
+*/
+face_t* Face_Dummy(brush_t* b, face_t* f) {
+        f = b->brushface[0] = nullptr;
+        if (f == NULL) {
+            return NULL;
+        }
+    return f;
+}
+
+/*
+=============
+    BrushPlane_Free
+=============
+*/
+void BrushPlane_Free(plane_t* plane) {
+        free( plane );
+}
+
+/*
+=============
+    BrushFace_Free
+=============
+*/
+void BrushFace_Free(face_t* face) {
+    free( face );
+}
+
+/*
+==========
+    Face_Copy
+==========
+*/
+face_t* Face_Copy(face_t* f) {
+    face_t* face = f;
+    memcpy(f, face, sizeof(*face));
+return f;
+}
+
+/*
+============
+    Face_FullCopy
+============
+*/
+face_t* Face_FullCopy(face_t* f) {
+    f = Alloc_Face();
+    memcpy(f, Alloc_Face(), sizeof(face_t));
+return f;
+}
+
+/*
+=============
+    Face_SetCount
+=============
+*/
+face_t* Face_SetCount(brush_t* b, face_t* f) {
+            static char cBuff[1024];
+            f->fnumId = b->brushface[6]->fnumId++;
+                for (b; f; f++) {
+
+                    sprintf(cBuff, "Face %i", f->fnumId);   
+
+                }
+          return f;
+}
+
+#define BRUSH_EPSILON 0.01
+
+#define BRUSHSIDE_FRONT g_nBrushSide = 0
+#define BRUSHSIDE_BACK g_nBrushSide = -1
+#define BRUSHSIDE_LEFT g_nBrushSide = 2
+#define BRUSHSIDE_RIGHT g_nBrushSide = 4
+#define BRUSHSIDE_BOTTOM g_nBrushSide = -2
+#define BRUSHSIDE_TOP g_nBrushId = 5
+
+/*
+==============
+    BRUSHSIDE_TOP
+==============
+*/
+int BrushSide_Top(brush_t* b, int side) {
+        brush_t* brush = b;
+        for (b; b->brushface[0]; b++) {
+            side = b->sides[0] = b->brush_sidewindings()->Side_WindingsFace(SIDE_TOP == (BRUSHSIDE_TOP));
+        }
+   return side = g_nBrushSide++;
+}
+
+/*
+=================
+    BRUSHSIDE_BOTTOM
+=================
+*/
+int BrushSide_Bottom(brush_t* b, int side) {
+        brush_t* brush = b;
+        for (b; b->sides[1]; b++) {
+            side = b->sides[1] = b->brush_sidewindings()->Side_WindingsFace(SIDE_BOTTOM == (BRUSHSIDE_BOTTOM));
+        }
+  return side = g_nBrushSide++;
+}
+
+/*
+===============
+    BRUSHSIDE_LEFT
+===============
+*/
+int BrushSide_Left(brush_t* b, int side) {
+         brush_t* brush = b;
+         for (b; b->sides[2]; b++) {
+             side = b->sides[2] = b->brush_sidewindings()->Side_WindingsFace(SIDE_LEFT == (BRUSHSIDE_LEFT));
+         }
+  return side = g_nBrushSide++;
+}
+
+/*
+================
+    BRUSHSIDE_RIGHT
+================
+*/
+int BrushSide_Right(brush_t* b, int side) {
+        brush_t* brush = b;
+        for (b; b->sides[3]; b++) {
+            side = b->sides[3] = b->brush_sidewindings()->Side_WindingsFace(SIDE_RIGHT == (BRUSHSIDE_RIGHT));
+        }
+   return side = g_nBrushSide++;
+}
+
+/*
+===============
+    BRUSHSIDE_BACK
+===============
+*/
+int BrushSide_Back(brush_t* b, int side) {
+        brush_t* brush = b;
+        for (b; b->sides[4]; b++) {
+            side = b->sides[4] = b->brush_sidewindings()->Side_WindingsFace(SIDE_BACK == (BRUSHSIDE_BACK));
+        }
+   return side = g_nBrushSide++;
+}
+
+/*
+================
+    BRUSHSIDE_FRONT
+================
+*/
+int BrushSide_Front(brush_t* b, int side) {
+            brush_t* brush = b;
+            for (b; b->sides[5]; b++) {
+                side = b->sides[5] = b->brush_sidewindings()->Side_WindingsFace(SIDE_FRONT == (BRUSHSIDE_FRONT));
+            }
+        return side = g_nBrushSide++;
+}
+
+/*
+================
+    BRUSH_DRAWFACE
+================
+*/
+void Brush_DrawFace(brush_t* b, face_t* f, int GL) {
+        brush_t* brush = b;
+        face_t* face = f;
+            for (b; f; GL++) {
+                glBegin(GL_CULL_FACE);
+                    (*face);
+                glEnd();
+            }
+}
