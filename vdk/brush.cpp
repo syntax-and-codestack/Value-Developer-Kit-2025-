@@ -7,7 +7,7 @@
 int g_nBrushId = 0;
 int g_nBrushSide = 0;
 
-#define BRUSH_WORLD_COORD_MIN -999993t
+#define BRUSH_WORLD_COORD_MIN -99999
 #define BRUSH_WORLD_COORD_MAX +99999
 
 /*
