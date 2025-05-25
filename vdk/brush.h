@@ -128,3 +128,5 @@ void Bsp_FindBrush(bspbrush_t * b);
 int brushSelect_MouseArray[];//store mouse clicks
 brush_t* Brush_FilterClient(brush_t * b);
 bool Brush_Preselect(brush_t* b);
+void Brush_ConsoleCreation( brush_t * b, vec3_t mins, vec3_t maxs, bool bSelect, const char* pConsoleCmd );
+bool Brush_CreatedFromConsole( brush_t * b );
