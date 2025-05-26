@@ -53,8 +53,8 @@ brush_t * Alloc_Brush(){
 ================
 */
 brush_t * Brush_SetCount(brush_t * b){
-      for(b; b->bnumId; b++){
-          Brush_Name(b);
+      for( b; b->bnumId; b++ ){
+          Brush_Name( b );
       }
   return b;
 }
