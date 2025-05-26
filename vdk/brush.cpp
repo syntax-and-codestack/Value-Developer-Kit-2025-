@@ -394,6 +394,7 @@ bool Brush_EpairMode(brush_t* b) {
                         Brush_LockEpair(b, b->bKey, b->bValue);
                 }
         }
+   return bBrushPrimitMode;
 }
 
 /*
